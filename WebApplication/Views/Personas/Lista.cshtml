@@ -1,0 +1,43 @@
+﻿@model List<WebApplication.Persona>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Número de Documento</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Dirección</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numeroDocumento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion1.calle)
+                    @Html.DisplayFor(modelItem => item.Direccion1.numero)
+                </td>
+                <td>
+                    @Html.ActionLink("Modificar", "Modificar", new { id = item.idPersona })
+                </td>
+                <td>
+                    @Html.ActionLink("Borrar", "Borrar", new { id = item.idPersona })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

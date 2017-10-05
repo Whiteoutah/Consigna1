@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Crear";
+}
+
+<form method="post" action="Modificar">
+    <input type="hidden" name="idPersona" value="@Model.idPersona" /><br />
+    <input type="text" name="nombre" value="@Model.nombre" /><br />
+    <input type="text" name="apellido" value="@Model.apellido" /><br />
+    <input type="text" name="numeroDocumento" value="@Model.numeroDocumento" /><br />
+    <input type="text" name="fechaNacimiento" value="@Model.fechaNacimiento" /><br />
+    <input type="hidden" name="idDireccion" value="@Model.direccion" />
+    <input type="text" name="calle" value="@Model.Direccion1.calle" /><br />
+    <input type="text" name="numero" value="@Model.Direccion1.numero" /><br /><br />
+    <input type="submit" value="Modificar" />
+</form>
